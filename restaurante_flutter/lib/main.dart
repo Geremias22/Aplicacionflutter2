@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:restaurante_flutter/Paginas/inicio.dart'; // Asegúrate de importar Inicio.dart
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox("box_lista_reserva");
   runApp(const MyApp());
 }
 
