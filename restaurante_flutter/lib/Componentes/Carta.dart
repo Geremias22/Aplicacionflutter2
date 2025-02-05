@@ -15,7 +15,7 @@ class Carta extends StatelessWidget {
     { "nom": "Saint Crispy Chicken", "img": "", "desc": "Un homenaje a los santos sabores del pollo crujiente con un rebozado dorado y perfecto."},
     { "nom": "Heavenly Vegan", "img": "", "desc": "Porque incluso en el cielo hay opciones veganas, esta burger ofrece un sabor celestial sin carne."},
     { "nom": "Apocalipsis Burger", "img": "", "desc": "El fin de los tiempos llega con esta burger cargada con todo lo posible: doble carne, triple queso, bacon y más."},
-    { "nom": "Black Angus Miracle", "img": "", "desc": "Un verdadero milagro de sabor, con carne Black Angus premium y un toque gourmet irresistible."}
+    { "nom": "Black Angus Miracle", "img": "lib/imagenes/angus.jpg", "desc": "Un verdadero milagro de sabor, con carne Black Angus premium y un toque gourmet irresistible."}
   ];
 
 
@@ -38,8 +38,8 @@ class Carta extends StatelessWidget {
                 children: [
                   Image.asset(
                     productosCarta[index]["img"],
-                    height: 150,
-                    width: double.infinity,
+                    height: 300,
+                    width: 300,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(height: 10),
