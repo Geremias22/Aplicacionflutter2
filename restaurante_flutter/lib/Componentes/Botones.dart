@@ -1,38 +1,50 @@
 import 'package:flutter/material.dart';
 
-class Botones extends StatelessWidget {
+class Botones extends StatefulWidget {
   final String textBoton;
   final Function() accionBoton;
 
-  const Botones({super.key, 
-    required this.textBoton, 
-    required this.accionBoton
-  });
+  const Botones({super.key, required this.textBoton, required this.accionBoton});
+
+  @override
+  _BotonesState createState() => _BotonesState();
+}
+
+class _BotonesState extends State<Botones> {
+  bool isHovering = false; // Para detectar si el mouse está encima
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: accionBoton,
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 200, 0, 0),
-          borderRadius: BorderRadius.circular(20), 
-          border: Border.all(
-            color: Colors.black,
-            width: 3
-          )
-          
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20,),
-          child: Text(
-            textBoton, 
-            style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 3
+    return MouseRegion(
+      onEnter: (_) => setState(() => isHovering = true), // Activa hover
+      onExit: (_) => setState(() => isHovering = false), // Desactiva hover
+      child: InkWell(
+        onTap: widget.accionBoton,
+        borderRadius: BorderRadius.circular(20), // Hace la animación más fluida
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 200), // Animación suave
+          decoration: BoxDecoration(
+            color: isHovering ? Colors.black : Color.fromARGB(255, 200, 0, 0), // Cambio de color
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.white, width: 3), // Borde más visible
+            boxShadow: [
+              BoxShadow(
+                color: isHovering ? Colors.redAccent : Colors.black, // Sombra dinámica
+                blurRadius: isHovering ? 15 : 8,
+                spreadRadius: isHovering ? 5 : 2,
+                offset: Offset(0, 5),
+              ),
+            ],
           ),
+          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 25),
+          child: Text(
+            widget.textBoton,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
           ),
         ),
       ),
