@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurante_flutter/Componentes/Carta.dart';
 import 'package:restaurante_flutter/Componentes/appBar.dart';
 import 'package:restaurante_flutter/Componentes/drawerInicio.dart';
 
@@ -26,12 +27,8 @@ class Inicio extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer(); // Abre el Drawer manualmente si no aparece el botón
-              },
-              child: const Text("Abrir Menú"),
-            ),
+            Container(
+              height:2000, child: const Carta()),
           ],
         ),
       ),
