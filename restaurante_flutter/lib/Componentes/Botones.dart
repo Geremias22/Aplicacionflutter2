@@ -24,12 +24,12 @@ class _BotonesState extends State<Botones> {
         child: AnimatedContainer(
           duration: Duration(milliseconds: 200), // Animación suave
           decoration: BoxDecoration(
-            color: isHovering ? Colors.black : Color.fromARGB(255, 200, 0, 0), // Cambio de color
+            color: isHovering ? const Color.fromARGB(255, 255, 0, 0) : Color.fromARGB(255, 200, 0, 0), // Cambio de color
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Colors.white, width: 3), // Borde más visible
             boxShadow: [
               BoxShadow(
-                color: isHovering ? Colors.redAccent : Colors.black, // Sombra dinámica
+                color: isHovering ? Colors.redAccent : const Color.fromARGB(255, 255, 0, 0), // Sombra dinámica
                 blurRadius: isHovering ? 15 : 8,
                 spreadRadius: isHovering ? 5 : 2,
                 offset: Offset(0, 5),
@@ -39,7 +39,7 @@ class _BotonesState extends State<Botones> {
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 25),
           child: Text(
             widget.textBoton,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
