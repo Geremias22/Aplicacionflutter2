@@ -10,7 +10,6 @@ class Misreservas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(itemCount: dadesRebudes.length, itemBuilder: (context, index){
-        // return Text("": dadesRebudes[index].toString());
         return ListTile(
             title: Text(dadesRebudes[index]),
           );

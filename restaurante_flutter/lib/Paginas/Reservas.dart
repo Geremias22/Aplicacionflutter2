@@ -132,15 +132,22 @@ const Reservas({super.key,});
                                 children: [
                                   Botones(textBoton: "Borrar", accionBoton: () => clearFormulary(tecNom, tecNumPers, tecFecha)),
 
-                                  // Botones(textBoton: "Enviar reserva", 
-                                  // accionBoton:() => 
-                                  //   accioGuardar(
-                                  //   context, 
-                                  //   tecNom.text,
-                                  //   tecNumPers.text,
-                                  //   tecFecha.text,
+                                  // FloatingActionButton(
+                                  //   onPressed: () {
+                                  //     Navigator.push(
+                                  //       context,
+                                  //       MaterialPageRoute(builder: (context) => Misreservas()),
+                                  //     );
+                                  //   },
+                                  //   backgroundColor: Colors.red,
+                                  //   foregroundColor: Colors.white,
+                                  //   shape: RoundedRectangleBorder(
+                                  //     borderRadius: BorderRadius.circular(15),
+                                  //     side: BorderSide(color: Colors.white, width: 2),
                                   //   ),
-                                  // ),
+                                  //   elevation: 10,
+                                  //   child: Icon(Icons.list, size: 30),
+                                  //   ),
                                 ],
                               )
                               
