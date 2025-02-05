@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'Paginas/Reservas.dart';
+import 'package:restaurante_flutter/Paginas/inicio.dart'; // Asegúrate de importar Inicio.dart
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
-class MainApp extends StatelessWidget {
-  
-  const MainApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false ,
-      home: Reservas(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, // Oculta la etiqueta de debug
+      title: 'Holy Burgers',
+      theme: ThemeData.dark(),
+      home: const Inicio(), // Aquí se usa Inicio() correctamente
     );
   }
 }
